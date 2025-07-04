@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Dev Portfolio | Technical Design</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="logo">&#9728; K's Hub</div>
+      <canvas id="nav-canvas"></canvas>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="project.html">Projects</a></li>
+          <li><a href="#portfolio-trailer">Trailer</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <h1>Technical Design and Development for Games</h1>
+        <div class="hero-subtitle">- Khadeer Shaik</div>
+        <canvas id="hero-canvas"></canvas>
+        <canvas id="dino-canvas" tabindex="0"></canvas>
+        <div id="dino-start-text" class="dino-start-text">
+          Press Space to start
+        </div>
+      </section>
+      <div class="about-skills-row">
+        <section id="about" class="about-horizontal main-section">
+          <div class="about-img-wrap">
+            <img src="s.jpg" alt="Profile Picture" class="profile-pic" />
+          </div>
+          <div class="about-text">
+            <h2>About Me</h2>
+            <div class="about-desc">
+              Hi! I'm a passionate
+              <span class="highlight">game developer</span> currently pursuing
+              my degree in
+              <span class="highlight">Games Design and Development</span>
+              (Programming) at the University of Greenwich. With nearly
+              <span class="highlight">two years</span> of
+              <span class="highlight">experience</span> creating games, I'm
+              dedicated to pushing the boundaries of interactive entertainment
+              and
+              <span class="highlight">delivering captivating experiences</span>
+              that resonate with players worldwide.
+            </div>
+          </div>
+        </section>
+        <section class="skills-section main-section">
+          <h2 style="display: flex; align-items: center; gap: 1rem">Skills</h2>
+          <div class="skills-gamify-title">Level Up Your Skills!</div>
+          <ul class="skills-list">
+            <li><span class="skill-icon">🕹️</span> Unity / Unreal</li>
+            <li><span class="skill-icon">#️⃣</span> C#</li>
+            <li><span class="skill-icon">💻</span> C++</li>
+            <li><span class="skill-icon">🧠</span> Technical design</li>
+            <li><span class="skill-icon">🧪</span> Testing</li>
+            <li><span class="skill-icon">🏃‍♂️</span> Agile</li>
+            <li><span class="skill-icon">🌱</span> Git</li>
+          </ul>
+          <div class="skills-xp-section">
+            <div class="xp-label">Experience Points</div>
+            <div class="xp-bar-container">
+              <div class="xp-bar">
+                <div class="xp-fill"></div>
+              </div>
+              <div class="xp-text">Level 2 - 1,700 XP</div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section id="portfolio-trailer" class="portfolio-trailer main-section">
+        <h2>Portfolio Trailer</h2>
+        <div class="click-me-above-trailer">Click me!</div>
+        <div class="trailer-container">
+          <div class="trailer-video-placeholder">
+            <div class="video-overlay">
+              <div class="play-button-container">
+                <div class="play-button">▶</div>
+              </div>
+              <div class="trailer-text">Watch My Work in Action</div>
+            </div>
+            <img
+              src="https://placehold.co/800x450?text=Portfolio+Trailer"
+              alt="Portfolio Trailer Thumbnail"
+              class="trailer-thumbnail"
+            />
+          </div>
+          <div class="trailer-description">
+            <p>
+              Get a glimpse into my game development journey and see some of my
+              projects in action. From technical design to gameplay mechanics,
+              discover how I bring ideas to life.
+            </p>
+            <div class="trailer-stats">
+              <div class="stat">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Projects</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">2</span>
+                <span class="stat-label">Years</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Technologies</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="projects" class="projects main-section">
+        <div class="projects-header">
+          <h2 class="section-title">Featured Projects</h2>
+          <div class="projects-subtitle">
+            Showcasing my technical expertise and creative solutions
+          </div>
+          <div class="projects-decoration">
+            <div class="decoration-line"></div>
+            <div class="decoration-icon">⚡</div>
+            <div class="decoration-line"></div>
+          </div>
+        </div>
+        <div class="project-carousel-container">
+          <a
+            href="project.html"
+            class="project-carousel-card active"
+            style="text-decoration: none; color: inherit"
+          >
+            <img
+              src="https://placehold.co/400x220?text=Procedural+Generator"
+              alt="Procedural Level Generator"
+              style="
+                width: 100%;
+                border-radius: 1rem 1rem 0 0;
+                object-fit: cover;
+              "
+            />
+            <h3 style="margin-bottom: 0.5rem">Procedural Level Generator</h3>
+            <div class="project-subtitle" style="margin-bottom: 0.7rem">
+              Endless, Unique Game Worlds
+            </div>
+            <div class="project-tags" style="margin-bottom: 1.1rem">
+              <span class="project-tag">CSharp</span>
+              <span class="project-tag">Unity</span>
+              <span class="project-tag">ProceduralGen</span>
+              <span class="project-tag">2024</span>
+            </div>
+            <p style="margin-bottom: 1.2rem">
+              Generate infinite, high-quality game levels on demand with
+              advanced procedural algorithms. Perfect for rapid prototyping and
+              replayability.
+            </p>
+          </a>
+          <a
+            href="project.html"
+            class="project-carousel-card"
+            style="text-decoration: none; color: inherit"
+          >
+            <img
+              src="https://placehold.co/400x220?text=AI+Behavior+Toolkit"
+              alt="AI Behavior Toolkit"
+              style="
+                width: 100%;
+                border-radius: 1rem 1rem 0 0;
+                object-fit: cover;
+              "
+            />
+            <h3 style="margin-bottom: 0.5rem">AI Behavior Toolkit</h3>
+            <div class="project-subtitle" style="margin-bottom: 0.7rem">
+              Smarter, Adaptive NPCs
+            </div>
+            <div class="project-tags" style="margin-bottom: 1.1rem">
+              <span class="project-tag">CPlusPlus</span>
+              <span class="project-tag">UnrealEngine5</span>
+              <span class="project-tag">AI</span>
+              <span class="project-tag">BehaviorTrees</span>
+            </div>
+            <p style="margin-bottom: 1.2rem">
+              Empower your games with modular AI: drag-and-drop behavior trees,
+              real-time debugging, and seamless engine integration for next-gen
+              NPCs.
+            </p>
+          </a>
+          <a
+            href="project.html"
+            class="project-carousel-card"
+            style="text-decoration: none; color: inherit"
+          >
+            <img
+              src="https://placehold.co/400x220?text=Visual+Scripting"
+              alt="Visual Scripting System"
+              style="
+                width: 100%;
+                border-radius: 1rem 1rem 0 0;
+                object-fit: cover;
+              "
+            />
+            <h3 style="margin-bottom: 0.5rem">Visual Scripting System</h3>
+            <div class="project-subtitle" style="margin-bottom: 0.7rem">
+              No-Code Game Logic
+            </div>
+            <div class="project-tags" style="margin-bottom: 1.1rem">
+              <span class="project-tag">TypeScript</span>
+              <span class="project-tag">Electron</span>
+              <span class="project-tag">NodeEditor</span>
+              <span class="project-tag">UXUI</span>
+            </div>
+            <p style="margin-bottom: 1.2rem">
+              Design complex interactions visually. Node-based editor, live
+              debugging, and instant engine sync—empowering designers and
+              speeding up workflows.
+            </p>
+          </a>
+          <a
+            href="project.html"
+            class="project-carousel-card"
+            style="text-decoration: none; color: inherit"
+          >
+            <img
+              src="https://placehold.co/400x220?text=Physics+Sandbox"
+              alt="Physics Sandbox"
+              style="
+                width: 100%;
+                border-radius: 1rem 1rem 0 0;
+                object-fit: cover;
+              "
+            />
+            <h3 style="margin-bottom: 0.5rem">Physics Sandbox</h3>
+            <div class="project-subtitle" style="margin-bottom: 0.7rem">
+              Interactive Real-Time Simulation
+            </div>
+            <div class="project-tags" style="margin-bottom: 1.1rem">
+              <span class="project-tag">CPlusPlus</span>
+              <span class="project-tag">WebAssembly</span>
+              <span class="project-tag">GPUPhysics</span>
+              <span class="project-tag">2024</span>
+            </div>
+            <p style="margin-bottom: 1.2rem">
+              Experiment with realistic physics in a playful sandbox. Drag,
+              drop, and collide objects with GPU-accelerated performance and
+              intuitive controls.
+            </p>
+          </a>
+        </div>
+        <div class="carousel-dots">
+          <span class="carousel-dot active" data-index="0"></span>
+          <span class="carousel-dot" data-index="1"></span>
+          <span class="carousel-dot" data-index="2"></span>
+          <span class="carousel-dot" data-index="3"></span>
+        </div>
+      </section>
+      <section id="contact" class="contact main-section">
+        <h2>Contact</h2>
+        <div class="contact-socials">
+          <span class="contact-name">Khadeer Shaik</span>
+          <div class="social-icons">
+            <a
+              href="https://linkedin.com"
+              class="social-icon linkedin"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+            >
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <rect width="32" height="32" rx="8" fill="#222" />
+                <path
+                  d="M10.667 13.333h2.666v8h-2.666v-8zm1.333-4a1.333 1.333 0 110 2.667 1.333 1.333 0 010-2.667zm3.333 4h2.56v1.093h.037c.356-.675 1.226-1.387 2.523-1.387 2.7 0 3.2 1.776 3.2 4.083v4.211h-2.667v-3.733c0-.891-.016-2.037-1.241-2.037-1.242 0-1.432.97-1.432 1.97v3.8h-2.68v-8z"
+                  fill="#fff"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://github.com"
+              class="social-icon github"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub"
+            >
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <rect width="32" height="32" rx="8" fill="#222" />
+                <path
+                  d="M16 6C10.477 6 6 10.477 6 16c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.339-2.221-.253-4.555-1.111-4.555-4.945 0-1.092.39-1.987 1.029-2.686-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0116 9.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.699 1.028 1.594 1.028 2.686 0 3.842-2.337 4.688-4.566 4.938.359.309.678.919.678 1.852 0 1.336-.012 2.417-.012 2.747 0 .268.18.579.688.481C23.138 24.162 26 20.418 26 16c0-5.523-4.477-10-10-10z"
+                  fill="#fff"
+                />
+              </svg>
+            </a>
+            <a
+              href="mailto:your@email.com"
+              class="social-icon email"
+              aria-label="Email"
+            >
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <rect width="32" height="32" rx="8" fill="#222" />
+                <path
+                  d="M8 12.667V20a1.333 1.333 0 001.333 1.333h13.334A1.333 1.333 0 0024 20v-7.333A1.333 1.333 0 0022.667 11H9.333A1.333 1.333 0 008 12.667zm2.04.667l5.293 4.235a.667.667 0 00.834 0l5.293-4.235c.04.08.04.173.04.26V20a.333.333 0 01-.333.333H9.333A.333.333 0 019 20v-6.406c0-.087 0-.18.04-.26zm10.586-1.334L16 15.265l-4.626-3.265h9.252z"
+                  fill="#fff"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>
+        &copy; <span id="current-year">2025</span> Khadeer. All rights reserved.
+      </p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="dino-game.js"></script>
+  </body>
+</html>
