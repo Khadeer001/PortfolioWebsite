@@ -292,27 +292,41 @@
       }
       @media (max-width: 900px) {
         .project-detail-section {
-          padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+          padding: 1.5rem 1rem 2rem 1rem;
         }
         .project-detail-video,
         .project-detail-img {
-          height: 180px;
-          max-width: 98vw;
+          height: 200px;
+          max-width: 100%;
         }
         .project-detail-title {
-          font-size: 1.5rem;
+          font-size: 1.8rem;
+        }
+        .project-detail-desc {
+          font-size: 1.1rem;
         }
       }
       @media (max-width: 600px) {
         .project-detail-section {
-          padding: 1.2rem 0.2rem 1.2rem 0.2rem;
+          padding: 1.2rem 0.8rem 1.8rem 0.8rem;
         }
         .project-detail-video,
         .project-detail-img {
-          height: 120px;
+          height: 160px;
         }
         .project-detail-title {
-          font-size: 1.1rem;
+          font-size: 1.4rem;
+          padding-left: 0.8rem;
+        }
+        .project-detail-desc {
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+        .project-detail-features h4 {
+          font-size: 1rem;
+        }
+        .project-detail-features li {
+          font-size: 0.95rem;
         }
       }
     </style>
@@ -343,50 +357,54 @@
       const projects = [
         {
           id: "1",
-          title: "Procedural Level Generator",
+          title: "PowerUp Pool",
           img: "Start Cover.png",
           video: "demo1.mp4",
-          desc: "A tool for generating unique game levels algorithmically, enabling rapid prototyping and endless replayability.",
+          desc: "A new mobile pool game packed with wild power-ups and fast-paced action. Challenge your friends, Win, and see if you have what it takes to become the a pool champion! Currently in development get ready to break the rules and the rack!",
           features: [
-            "Procedural algorithms",
-            "Customizable parameters",
-            "Export to game engines",
+            "Unity development",
+            "Mobile platform",
+            "Arcade gameplay",
+            "Power-up mechanics",
           ],
         },
         {
           id: "2",
-          title: "AI Behavior Toolkit",
-          img: "project2.jpg",
-          video: "demo2.mp4",
-          desc: "A toolkit for creating dynamic, intelligent NPC behaviors with minimal code.",
+          title: "Korosu: The Last Stand",
+          img: "tls.png",
+          video: "KDemo.mp4",
+          desc: "A third-person tower defence game set in 15th century Japan. Defend your village against enemy clans in strategic gameplay.",
           features: [
-            "Behavior trees",
-            "Visual editor",
-            "Plug-and-play AI modules",
+            "UE5 development",
+            "Windows platform",
+            "Blueprints system",
+            "Tower defence mechanics",
           ],
         },
         {
           id: "3",
-          title: "Visual Scripting System",
-          img: "project3.jpg",
+          title: "Custom Unreal Tool",
+          img: "unreal.png",
           video: "demo3.mp4",
-          desc: "A node-based scripting system for designers to create game logic visually.",
+          desc: "A custom tool in Unreal Engine that converts simple SVG files into 3D static meshes. Perfect for procedural generation workflows and vector-based design input.",
           features: [
-            "Node editor",
-            "Live debugging",
-            "Integration with game engine",
+            "UE5 integration",
+            "C++ development",
+            "SVG parsing",
+            "3D mesh generation",
           ],
         },
         {
           id: "4",
-          title: "Physics Sandbox",
-          img: "project4.jpg",
-          video: "demo4.mp4",
-          desc: "A physics sandbox for experimenting with real-time simulations and mechanics.",
+          title: "Steamboat Frenzy",
+          img: "arduino.jpg",
+          video: "ArduinoPortflio.mp4",
+          desc: "This project uses a custom controller built with Arduino and a game developed in Unity. Experience interactive gameplay designed for two players with unique hardware integration.",
           features: [
-            "Real-time physics",
-            "Customizable objects",
-            "Interactive UI",
+            "Unity development",
+            "Arduino integration",
+            "C# programming",
+            "Custom hardware controller",
           ],
         },
       ];
