@@ -1380,7 +1380,7 @@ footer {
   width: 100%;
   max-width: 520px;
   margin: 0 auto 2rem auto;
-  min-height: 420px;
+  min-height: 750px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1394,9 +1394,14 @@ footer {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(24, 24, 24, 0.85);
+  background: radial-gradient(
+      ellipse at 60% 0%,
+      rgba(136, 136, 136, 0.1) 0%,
+      rgba(34, 34, 34, 0.95) 80%
+    ),
+    var(--card-bg);
+  box-shadow: 0 4px 32px #0002, 0 0 32px 8px #ffe06622;
   border-radius: 1.5rem;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18), 0 2px 8px #0003;
   border: 1.5px solid var(--border);
   opacity: 0;
   pointer-events: none;
@@ -1410,6 +1415,7 @@ footer {
   backdrop-filter: blur(14px) saturate(1.2);
   height: 100%;
   box-sizing: border-box;
+  cursor: pointer;
 }
 .project-carousel-card.active {
   opacity: 1;
@@ -1483,28 +1489,53 @@ footer {
 }
 @media (max-width: 600px) {
   .project-carousel-container {
-    min-height: 320px;
+    display: block !important;
+    position: static !important;
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
     max-width: 98vw;
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
     border-radius: 1rem;
-    overflow: hidden;
     background: transparent !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+  .projects.main-section {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
   }
   .project-carousel-card {
-    padding: 1.1rem 0.5rem 1.1rem 0.5rem;
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
     border-radius: 1rem;
-    min-height: 100%;
-    height: 100%;
+    min-height: unset !important;
+    height: auto !important;
+    overflow: visible !important;
     box-sizing: border-box;
-    margin-bottom: 0;
-    display: flex;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    padding: 1.1rem 0.5rem 1.1rem 0.5rem;
     flex-direction: column;
     justify-content: flex-start;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: auto !important;
+    transition: none !important;
+  }
+  .project-carousel-card:not(:last-child) {
+    margin-bottom: 1.5rem !important;
   }
   .project-carousel-card img {
     height: 140px;
+  }
+  .project-carousel-card p {
+    min-height: unset;
+    font-size: 1.05rem;
   }
 }
 
@@ -1887,4 +1918,158 @@ footer {
   margin-left: 2.2rem;
   margin-bottom: 0.7rem;
   margin-right: 0;
+}
+
+/* Image Modal Styles */
+.image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.image-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#imageModal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 900px;
+  height: 90%;
+  max-height: 900px;
+  background: var(--bg);
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  z-index: 1001;
+}
+
+#imageModal > div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+#modalImage {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 0.7rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+#closeModal,
+#prevImage,
+#nextImage {
+  position: absolute;
+  font-size: 2rem;
+  color: var(--fg);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  z-index: 1001;
+}
+
+#closeModal {
+  top: 10px;
+  right: 10px;
+}
+#prevImage {
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#nextImage {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#closeModal:hover,
+#prevImage:hover,
+#nextImage:hover {
+  background: var(--accent);
+  color: var(--bg);
+  transform: scale(1.1);
+}
+
+#imageCounter {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.3rem;
+  color: var(--fg);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 0.5rem;
+  z-index: 1001;
+}
+
+@media (max-width: 600px) {
+  #imageModal {
+    align-items: flex-start !important;
+    padding-top: 2.5rem;
+  }
+  #imageModal > div {
+    max-width: 98vw !important;
+    max-height: 90vh !important;
+    padding: 0.5rem;
+  }
+  #modalImage {
+    max-width: 96vw !important;
+    max-height: 60vh !important;
+    border-radius: 0.7rem;
+  }
+  #closeModal,
+  #prevImage,
+  #nextImage {
+    font-size: 2.5rem !important;
+    padding: 0.7rem 1.2rem !important;
+    top: 0.2rem !important;
+    z-index: 1001;
+  }
+  #closeModal {
+    right: 0.2rem !important;
+    top: 0.2rem !important;
+  }
+  #prevImage {
+    left: 0.2rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+  #nextImage {
+    right: 0.2rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+  #imageCounter {
+    font-size: 1.2rem !important;
+    margin-top: 0.7rem !important;
+  }
 }
