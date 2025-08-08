@@ -434,3 +434,172 @@ document.addEventListener("DOMContentLoaded", function () {
   showCard(0);
   startAutoScroll();
 })();
+
+// Typewriter Terminal Animation
+(function () {
+  const typewriterOutput = document.getElementById("typewriterOutput");
+  const typewriterLine1 = document.getElementById("typewriterLine1");
+
+  if (!typewriterOutput || !typewriterLine1) return;
+
+  // Add some terminal-like sound effects (optional)
+  function addTerminalSound() {
+    // Create a subtle beep sound
+    const audioContext = new (window.AudioContext ||
+      window.webkitAudioContext)();
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+
+    oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+    oscillator.type = "sine";
+
+    gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(
+      0.01,
+      audioContext.currentTime + 0.1
+    );
+
+    oscillator.start(audioContext.currentTime);
+    oscillator.stop(audioContext.currentTime + 0.1);
+  }
+
+  // Add sound on click (optional - uncomment if you want sound)
+  // typewriterOutput.addEventListener('click', addTerminalSound);
+})();
+
+// Scroll-triggered animations
+(function () {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-in-visible");
+      }
+    });
+  }, observerOptions);
+
+  // Observe elements for scroll animations
+  const elementsToAnimate = document.querySelectorAll(
+    ".about-horizontal, .skills-section, .portfolio-trailer, .projects, .project-carousel-card, .skills-list li"
+  );
+
+  elementsToAnimate.forEach((el) => {
+    el.classList.add("fade-in");
+    observer.observe(el);
+  });
+})();
+
+// Pixel white mouse trail effect
+(function () {
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+
+  canvas.style.position = "fixed";
+  canvas.style.top = "0";
+  canvas.style.left = "0";
+  canvas.style.pointerEvents = "none";
+  canvas.style.zIndex = "9999";
+  canvas.style.width = "100vw";
+  canvas.style.height = "100vh";
+  document.body.appendChild(canvas);
+
+  let particles = [];
+  let mouseX = 0;
+  let mouseY = 0;
+  let isMouseMoving = false;
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  resizeCanvas();
+  window.addEventListener("resize", resizeCanvas);
+
+  class Particle {
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+      this.size = Math.random() * 4 + 2; // Increased size for better visibility
+      this.speedX = (Math.random() - 0.5) * 2;
+      this.speedY = (Math.random() - 0.5) * 2;
+      this.life = 1;
+      this.decay = Math.random() * 0.02 + 0.01;
+    }
+
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      this.life -= this.decay;
+      this.size *= 0.98;
+    }
+
+    draw() {
+      ctx.save();
+      ctx.globalAlpha = this.life;
+      ctx.fillStyle = "#ffffff";
+      ctx.shadowColor = "#ffffff";
+      ctx.shadowBlur = 6; // Increased shadow blur for better visibility
+      ctx.fillRect(this.x, this.y, this.size, this.size);
+      ctx.restore();
+    }
+  }
+
+  function createParticles() {
+    if (isMouseMoving) {
+      for (let i = 0; i < 3; i++) {
+        // Increased number of particles
+        particles.push(new Particle(mouseX, mouseY));
+      }
+    }
+  }
+
+  function updateParticles() {
+    for (let i = particles.length - 1; i >= 0; i--) {
+      particles[i].update();
+      if (particles[i].life <= 0) {
+        particles.splice(i, 1);
+      }
+    }
+  }
+
+  function drawParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach((particle) => particle.draw());
+  }
+
+  function animate() {
+    createParticles();
+    updateParticles();
+    drawParticles();
+    requestAnimationFrame(animate);
+  }
+
+  // Start the animation
+  console.log("Mouse trail animation initialized");
+  animate();
+
+  // Mouse event listeners
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    isMouseMoving = true;
+
+    // Reset mouse moving flag after a short delay
+    clearTimeout(window.mouseTimeout);
+    window.mouseTimeout = setTimeout(() => {
+      isMouseMoving = false;
+    }, 100);
+  });
+
+  document.addEventListener("mouseleave", () => {
+    isMouseMoving = false;
+  });
+})();

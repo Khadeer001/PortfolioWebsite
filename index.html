@@ -36,18 +36,38 @@
           </div>
           <div class="about-text">
             <h2>About Me</h2>
-            <div class="about-desc">
-              Hi! I'm a passionate
-              <span class="highlight">game developer</span> currently pursuing
-              my degree in
-              <span class="highlight">Games Design and Development</span>
-              (Programming) at the University of Greenwich. With nearly
-              <span class="highlight">two years</span> of
-              <span class="highlight">experience</span> creating games, I'm
-              dedicated to pushing the boundaries of interactive entertainment
-              and
-              <span class="highlight">delivering captivating experiences</span>
-              that resonate with players worldwide.
+            <div class="typewriter-container">
+              <div class="typewriter-terminal">
+                <div class="terminal-header">
+                  <span class="terminal-button red"></span>
+                  <span class="terminal-button yellow"></span>
+                  <span class="terminal-button green"></span>
+                  <span class="terminal-title">developer@portfolio:~$</span>
+                </div>
+                <div class="terminal-content">
+                  <div class="typewriter-line" id="typewriterLine1">
+                    <span class="prompt">$</span>
+                    <span class="command">cat about_me.txt</span>
+                    <span class="cursor">|</span>
+                  </div>
+                  <div class="typewriter-output" id="typewriterOutput">
+                    <div class="output-line">Loading developer profile...</div>
+                    <div class="output-line">
+                      Name: Khadeer Shaik | Role: Game Developer 🎮
+                    </div>
+                    <div class="output-line">
+                      Education: Games Design & Development (Programming) 🎓
+                    </div>
+                    <div class="output-line">
+                      Experience: 2+ years creating interactive games 🚀
+                    </div>
+                    <div class="output-line">
+                      Focus: Technical design & captivating player experiences
+                      ✨
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -76,41 +96,33 @@
       </div>
       <section id="portfolio-trailer" class="portfolio-trailer main-section">
         <h2>Portfolio Trailer</h2>
-        <div class="click-me-above-trailer">Click me!</div>
         <div class="trailer-container">
-          <div class="trailer-video-placeholder">
-            <div class="video-overlay">
-              <div class="play-button-container">
-                <div class="play-button">▶</div>
-              </div>
-              <div class="trailer-text">Watch My Work in Action</div>
-            </div>
-            <img
-              src="https://placehold.co/800x450?text=Portfolio+Trailer"
-              alt="Portfolio Trailer Thumbnail"
-              class="trailer-thumbnail"
-            />
+          <div class="trailer-video-container">
+            <video
+              src="PT.mp4"
+              controls
+              preload="metadata"
+              poster="PTC.png"
+              class="trailer-video"
+              style="
+                width: 100%;
+                max-width: 800px;
+                height: auto;
+                border-radius: 1rem;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+                background: #000;
+              "
+            >
+              Your browser does not support the video tag.
+            </video>
           </div>
+
           <div class="trailer-description">
             <p>
               Get a glimpse into my game development journey and see some of my
               projects in action. From technical design to gameplay mechanics,
               discover how I bring ideas to life.
             </p>
-            <div class="trailer-stats">
-              <div class="stat">
-                <span class="stat-number">10+</span>
-                <span class="stat-label">Projects</span>
-              </div>
-              <div class="stat">
-                <span class="stat-number">2</span>
-                <span class="stat-label">Years</span>
-              </div>
-              <div class="stat">
-                <span class="stat-number">5+</span>
-                <span class="stat-label">Technologies</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
