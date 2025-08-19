@@ -326,6 +326,7 @@ footer {
   height: 220px;
   border-radius: 0;
   object-fit: cover;
+  object-position: center 30%;
   border: 3px solid var(--accent);
   background: var(--bg);
 }
