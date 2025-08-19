@@ -359,7 +359,7 @@
           id: "1",
           title: "PowerUp Pool",
           img: "Start Cover.png",
-          video: "demo1.mp4",
+          video: null,
           desc: "A new mobile pool game packed with wild power-ups and fast-paced action. Challenge your friends, Win, and see if you have what it takes to become the a pool champion! Currently in development get ready to break the rules and the rack! This is a project that I am currently working on, brought to you by Matchup Games. As a junior developer, I'm responsible for the technical design, UI integration, bug testing, audio implementation, and overall game development. The project is still in active development, more about the project coming soon!",
           features: [
             "Unity development",
@@ -373,7 +373,7 @@
           id: "2",
           title: "Korosu: The Last Stand",
           img: "tls.png",
-          video: "KDemo.mp4",
+          video: "https://www.youtube.com/embed/6Dew3JWtwhk",
           desc: "A third-person tower defence game set in 15th-century Japan, where you defend your village against enemy clans through strategic gameplay. Inspired by Ghost of Tsushima, this was my first Unreal Engine project, fully designed and developed by me. Through this project, I gained valuable experience in game design and development, and I learned how to use Unreal Engine effectively. It was also my first time working with Blueprints, and the visual scripting process proved to be a great learning experience. I'm excited to continue building on these skills and creating more projects with Unreal.",
           features: [
             "UE5 development",
@@ -386,7 +386,7 @@
           id: "3",
           title: "Custom Unreal Tool",
           img: "unreal.png",
-          video: "Tool.mp4",
+          video: "https://www.youtube.com/embed/j5hvv_9nioY",
           desc: "A custom Unreal Engine tool that converts simple SVG files into 3D static meshes, designed for procedural generation workflows and vector-based design input. This was my first attempt at creating a plugin in Unreal, with the goal of building something useful for both developers and artists. While the tool is currently simple and supports only a limited range of shapes, the project taught me a lot about Unreal Engine and the process of tool development. It also has strong potential for expansion into a more advanced and versatile plugin in the future.",
           features: [
             "UE5 integration",
@@ -399,8 +399,8 @@
           id: "4",
           title: "Steamboat Frenzy",
           img: "arduino.jpg",
-          video: "ArduinoPortflio.mp4",
-          desc: "Steamboat Frenzy is a solo-developed interactive project combining Unity with custom Arduino hardware. Originally conceived during a 3-day hackathon centered on the theme “Bizarro,” this project challenged me to rapidly prototype and iterate under pressure. Throughout development, I gained hands-on experience integrating microcontrollers into a Unity environment, and strengthened my ability to solve complex technical problems—ranging from simulating realistic rotation to ensuring smooth mechanical interactions with gameplay. The experience also sharpened my ability to quickly turn abstract ideas into functional, engaging experiences.",
+          video: "https://www.youtube.com/embed/YWlRU3ONnaQ",
+          desc: 'Steamboat Frenzy is a solo-developed interactive project combining Unity with custom Arduino hardware. Originally conceived during a 3-day hackathon centered on the theme "Bizarro," this project challenged me to rapidly prototype and iterate under pressure. Throughout development, I gained hands-on experience integrating microcontrollers into a Unity environment, and strengthened my ability to solve complex technical problems—ranging from simulating realistic rotation to ensuring smooth mechanical interactions with gameplay. The experience also sharpened my ability to quickly turn abstract ideas into functional, engaging experiences.',
           features: [
             "Unity development",
             "Arduino integration",
@@ -412,7 +412,7 @@
           id: "5",
           title: "Extraterrestrial Escape",
           img: "EECover.jpg",
-          video: "EEVideo.mp4",
+          video: "https://www.youtube.com/embed/HsgzPVyRkHs",
           desc: "EE is a stealth-based game where you play as an alien who has crash-landed on Earth. To survive and escape, you must navigate unfamiliar environments, avoid detection by humans, and recover scattered ship parts to send a distress signal and return home. Developed as part of my coursework, this group project was completed in a small team of four, where I took on a leadership role. The experience significantly strengthened my collaboration, communication, and leadership abilities while deepening my technical skills in game development. Throughout the project, I worked on implementing enemy AI state machines, navigation meshes, health systems for both players and enemies, user interface design, level design, and player mechanics such as a flashlight system and interactive objects.",
           features: [
             "Unity development",
@@ -431,14 +431,15 @@
           section.innerHTML = `
             <div class="project-detail-title">${project.title}</div>
             <div class="project-detail-media">
-              <video class="project-detail-video" src="${
+              ${
                 project.video
-              }" poster="${
-            project.img
-          }" controls preload="none" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"></video>
-              <img src="${project.img}" alt="${
-            project.title
-          }" class="project-detail-img" style="display:none;" />
+                  ? `
+                <iframe class="project-detail-video" src="${project.video}" frameborder="0" allowfullscreen></iframe>
+              `
+                  : `
+                <img src="${project.img}" alt="${project.title}" class="project-detail-img" />
+              `
+              }
             </div>
             <div class="project-detail-desc">${project.desc}</div>
             <div class="project-detail-features">
